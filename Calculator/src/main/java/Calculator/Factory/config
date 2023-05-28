@@ -1,0 +1,9 @@
++ Calculator.Factory.AddCreator
+DEFINE Calculator.Factory.DefineCreator
+/ Calculator.Factory.DivideCreator
+* Calculator.Factory.MultipleCreator
+POP Calculator.Factory.PopCreator
+PRINT Calculator.Factory.PrintCreator
+PUSH Calculator.Factory.PushCreator
+SQRT Calculator.Factory.SqrtCreator
+- Calculator.Factory.SubCreator
