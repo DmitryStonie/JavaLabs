@@ -5,8 +5,5 @@ import Calculator.Operations.Operation;
 import Calculator.Operations.Sub;
 
 public class SubCreator extends Creator{
-    @Override
-    public Operation createOperation(){
-        return new Sub();
-    }
+
 }

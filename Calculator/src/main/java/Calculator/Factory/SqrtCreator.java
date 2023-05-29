@@ -5,8 +5,5 @@ import Calculator.Operations.Operation;
 import Calculator.Operations.Sqrt;
 
 public class SqrtCreator extends Creator{
-    @Override
-    public Operation createOperation(){
-        return new Sqrt();
-    }
+
 }

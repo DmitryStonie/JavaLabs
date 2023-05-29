@@ -1,9 +1,9 @@
-+ Calculator.Factory.AddCreator
-DEFINE Calculator.Factory.DefineCreator
-/ Calculator.Factory.DivideCreator
-* Calculator.Factory.MultipleCreator
-POP Calculator.Factory.PopCreator
-PRINT Calculator.Factory.PrintCreator
-PUSH Calculator.Factory.PushCreator
-SQRT Calculator.Factory.SqrtCreator
-- Calculator.Factory.SubCreator
++ Calculator.Factory.AddCreator Calculator.Operations.Add
+DEFINE Calculator.Factory.DefineCreator Calculator.Operations.Define
+/ Calculator.Factory.DivideCreator Calculator.Operations.Divide
+* Calculator.Factory.MultipleCreator Calculator.Operations.Multiple
+POP Calculator.Factory.PopCreator Calculator.Operations.Pop
+PRINT Calculator.Factory.PrintCreator Calculator.Operations.Print
+PUSH Calculator.Factory.PushCreator Calculator.Operations.Push
+SQRT Calculator.Factory.SqrtCreator Calculator.Operations.Sqrt
+- Calculator.Factory.SubCreator Calculator.Operations.Sub

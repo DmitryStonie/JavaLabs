@@ -1,7 +1,7 @@
 package Calculator.Operations;
 
+import Calculator.Begin.ExecutionContext;
+
 public interface Operation {
-    public static void doOperation(){}
-    public static void doOperation(String var, String value){}
-    public static void doOperation(String number){}
+    public void doOperation(String[] input, ExecutionContext context);
 }
