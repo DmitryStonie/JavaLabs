@@ -1,9 +1,7 @@
 package Calculator.Factory;
 
-import Calculator.Operations.Operation;
-import Calculator.Parser.Parser;
+import Calculator.Core.Parser;
 
-import javax.xml.parsers.FactoryConfigurationError;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,10 +19,12 @@ public class Factory {
             String[] words = new String[WORDS_SIZE];
             InputStream config = Factory.class.getResourceAsStream(CONFIG_FILE_NAME);
             Scanner input = new Scanner(config);
+            Parser parser = new Parser();
+            int operationIndex = 0;
             while (input.hasNext()) {
                 str = input.nextLine();
-                Parser.parseString(str);
-                if (str != null) {
+                operationIndex = parser.parseString(str, words);
+                if (operationIndex != -1) {
                     Class creatorClass = Class.forName(words[CREATOR_CLASS]);
                     Creator creator = (Creator) creatorClass.newInstance();
                     creator.initCreator(words[OPERATION_CLASS]);
