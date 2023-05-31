@@ -1,46 +1,45 @@
 package Calculator.Factory;
 
 import Calculator.Core.Parser;
+import Calculator.Core.Reader;
+import Calculator.Exceptions.Factory.CreatorException;
+import Calculator.Exceptions.Factory.CreatorInitializationException;
+import Calculator.Exceptions.Factory.CreatorMakingException;
 
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Factory {
     private static final String CONFIG_FILE_NAME = "config";
     private static final int WORDS_SIZE = 3;
-    private static final int OPERATION_NAME = 0;
-    private static final int CREATOR_CLASS = 1;
-    private static final int OPERATION_CLASS = 2;
-    public static ArrayList makeCreators() {
-        ArrayList<Creator> creators = new ArrayList<Creator>();
+    private static final int CREATOR_CLASS_INDEX = 1;
+    private static final int OPERATION_CLASS_INDEX = 2;
+
+    public static ArrayList makeCreators() throws CreatorException {
         try {
-            String str = new String();
-            String[] words = new String[WORDS_SIZE];
-            InputStream config = Factory.class.getResourceAsStream(CONFIG_FILE_NAME);
-            Scanner input = new Scanner(config);
+            ArrayList<Creator> creators = new ArrayList<>();
+            Reader reader = new Reader();
             Parser parser = new Parser();
-            int operationIndex = 0;
-            while (input.hasNext()) {
-                str = input.nextLine();
+            parser.init();
+            reader.init(CONFIG_FILE_NAME);
+            String str;
+            String[] words = new String[WORDS_SIZE];
+            int operationIndex;
+            while (true) {
+                str = reader.readString();
+                if (str == null) break;
                 operationIndex = parser.parseString(str, words);
-                if (operationIndex != -1) {
-                    Class creatorClass = Class.forName(words[CREATOR_CLASS]);
-                    Creator creator = (Creator) creatorClass.newInstance();
-                    creator.initCreator(words[OPERATION_CLASS]);
-                    creators.add(creator);
-                } else {
-                    //throw FactoryConfigurationError;//плохо?
-                }
+                if (operationIndex == -1) break;
+                Class creatorClass = Class.forName(words[CREATOR_CLASS_INDEX]);
+                Creator creator = (Creator) creatorClass.newInstance();
+                creator.initCreator(words[OPERATION_CLASS_INDEX]);
+                creators.add(creator);
             }
             return creators;
-        }  catch (java.lang.InstantiationException e) {
-            System.out.println(e.getMessage());
-        } catch (java.lang.IllegalAccessException e) {
-            System.out.println(e.getMessage());
-        } catch (java.lang.ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+        } catch (java.lang.InstantiationException | java.lang.IllegalAccessException |
+                 java.lang.ClassNotFoundException e) {
+            throw new CreatorMakingException("Can't make creator\n");
+        } catch (CreatorInitializationException e) {
+            throw e;
         }
-        return creators;
     }
 }

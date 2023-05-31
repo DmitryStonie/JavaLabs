@@ -1,19 +1,22 @@
 package Calculator.Factory;
 
+import Calculator.Exceptions.Factory.CreateOperationException;
+import Calculator.Exceptions.Factory.CreatorInitializationException;
+import Calculator.Exceptions.Factory.CreatorNotInitializedException;
 import Calculator.Operations.Operation;
 
 public abstract class Creator {
     protected Class opclass = null;
 
-    public final void initCreator(String operationName) {
+    public final void initCreator(String operationName) throws CreatorInitializationException{
         try {
             Class opclass = Class.forName(operationName);
         } catch (java.lang.ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+            throw new CreatorInitializationException("Cannot initialize creator\n");
         }
     }
 
-    public final Operation createOperation() {
+    public Operation createOperation() throws CreateOperationException, CreatorNotInitializedException {
         if (opclass == null) {
             System.out.println("Creator didn't initialized\n");
             return null;
@@ -21,12 +24,8 @@ public abstract class Creator {
             try {
                 Operation operation = (Operation) opclass.newInstance();
                 return operation;
-            } catch (java.lang.InstantiationException e) {
-                System.out.println(e.getMessage());
-                return null;
-            } catch (java.lang.IllegalAccessException e) {
-                System.out.println(e.getMessage());
-                return null;
+            } catch (java.lang.InstantiationException | java.lang.IllegalAccessException e) {
+                throw new CreateOperationException("Cannot create operation\n");
             }
         }
     }
