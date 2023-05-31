@@ -10,7 +10,7 @@ public class Push implements Operation{
     @Override
     public void doOperation(String[] input, ExecutionContext context) throws PushOperationException {
         try {
-            if(input[1].equals(EMPTY_STRING) == false) throw new PushOperationException("Push operation unsuccessful. No value entered\n");
+            if(input[1].equals(EMPTY_STRING) == true) throw new PushOperationException("Push operation unsuccessful. No value entered\n");
             Double number = Double.parseDouble(input[1]);
             context.pushNumber(number);
         }  catch (NullPointerException | NumberFormatException e){

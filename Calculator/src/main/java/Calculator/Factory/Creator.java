@@ -10,7 +10,7 @@ public abstract class Creator {
 
     public final void initCreator(String operationName) throws CreatorInitializationException{
         try {
-            Class opclass = Class.forName(operationName);
+            opclass = Class.forName(operationName);
         } catch (java.lang.ClassNotFoundException e) {
             throw new CreatorInitializationException("Cannot initialize creator\n");
         }

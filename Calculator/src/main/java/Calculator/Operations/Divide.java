@@ -12,7 +12,7 @@ public class Divide implements Operation {
         try {
             a = context.popNumber();
             b = context.popNumber();
-            if (b.equals(0)) throw new DivideOperationException("Division by zero exception\n");
+            if (b.equals(0.0)) throw new DivideOperationException("Division by zero exception\n");
             b = a / b;
             context.pushNumber(b);
         } catch(StackException e){

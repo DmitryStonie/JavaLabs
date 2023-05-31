@@ -9,7 +9,7 @@ import Calculator.Exceptions.Factory.CreatorMakingException;
 import java.util.ArrayList;
 
 public class Factory {
-    private static final String CONFIG_FILE_NAME = "config";
+    private static final String CONFIG_FILE_NAME = "../Factory/config";
     private static final int WORDS_SIZE = 3;
     private static final int CREATOR_CLASS_INDEX = 1;
     private static final int OPERATION_CLASS_INDEX = 2;

@@ -10,6 +10,7 @@ public class Parser {
 
     private static final int WORDS_SIZE = 3;
     private static final String CONFIG_FILE_NAME = "../Factory/config";
+    private static String[] localWords = new String[3];
     private static ArrayList<String> commands = null;
     public void init(){
             commands = new ArrayList<>();
@@ -25,7 +26,8 @@ public class Parser {
     }
 
     public int parseString(String str, String[] words){
-        words = str.split(" ", WORDS_SIZE);
+        localWords = str.split(" ", WORDS_SIZE);
+        System.arraycopy(localWords, 0, words, 0, localWords.length);
         return commands.lastIndexOf(words[0]);
     }
 }
