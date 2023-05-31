@@ -2,6 +2,8 @@ package Calculator.Factory;
 
 import Calculator.Core.Parser;
 import Calculator.Core.Reader;
+import Calculator.Exceptions.Execution.InitParserException;
+import Calculator.Exceptions.Execution.InitReaderException;
 import Calculator.Exceptions.Factory.CreatorException;
 import Calculator.Exceptions.Factory.CreatorInitializationException;
 import Calculator.Exceptions.Factory.CreatorMakingException;
@@ -14,7 +16,7 @@ public class Factory {
     private static final int CREATOR_CLASS_INDEX = 1;
     private static final int OPERATION_CLASS_INDEX = 2;
 
-    public static ArrayList makeCreators() throws CreatorException {
+    public static ArrayList<Creator> makeCreators() throws CreatorException {
         try {
             ArrayList<Creator> creators = new ArrayList<>();
             Reader reader = new Reader();
@@ -29,7 +31,7 @@ public class Factory {
                 if (str == null) break;
                 operationIndex = parser.parseString(str, words);
                 if (operationIndex == -1) break;
-                Class creatorClass = Class.forName(words[CREATOR_CLASS_INDEX]);
+                Class<?> creatorClass = Class.forName(words[CREATOR_CLASS_INDEX]);
                 Creator creator = (Creator) creatorClass.newInstance();
                 creator.initCreator(words[OPERATION_CLASS_INDEX]);
                 creators.add(creator);
@@ -38,8 +40,9 @@ public class Factory {
         } catch (java.lang.InstantiationException | java.lang.IllegalAccessException |
                  java.lang.ClassNotFoundException e) {
             throw new CreatorMakingException("Can't make creator\n");
-        } catch (CreatorInitializationException e) {
-            throw e;
+        } catch (InitParserException | InitReaderException | CreatorInitializationException  e){
+            System.out.println(e.getMessage());
+            throw new CreatorMakingException("Can't make creator\n");
         }
     }
 }
