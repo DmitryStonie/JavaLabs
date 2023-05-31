@@ -1,35 +1,40 @@
 package Calculator.Core;
 
-import java.util.EmptyStackException;
+import Calculator.Exceptions.Execution.MapException;
+import Calculator.Exceptions.Execution.StackException;
+
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 public class ExecutionContext {
-    private final Stack<Double> numbers = new Stack<Double>();
-    private Map<String, Double> variables;
+    private final Stack<Double> numbers = new Stack<>();
+    private final Map<String, Double> variables = new HashMap<>();
     private static int stackTopIndex = -1;
-    public Double popNumber(){
+    public Double popNumber() throws StackException{
         if(stackTopIndex >= 0) {
-            Double num = 0.0;
-            num = numbers.pop();
-            return num;
+            return numbers.pop();
         } else{
-            throw new StackException
+            throw new StackException("Not enough numbers on stack\n");
         }
     }
     public void pushNumber(Double number){
         numbers.push(number);
     }
-    public Double peekNumber(){
-        Double num = 0.0;
-        num = numbers.peek();
-        return num;
+    public Double peekNumber() throws StackException{
+        if(stackTopIndex >= 0) {
+            return numbers.peek();
+        } else{
+            throw new StackException("Not enough numbers on stack\n");
+        }
     }
     public void addVar(String var, Double value){
         variables.put(var, value);
+        stackTopIndex++;
     }
-    public Double getValue(String var){
-        Double value = 0.0;
-        value = variables.get(var);
-        return value;
+    public Double getValue(String var) throws MapException{
+            Double value = variables.get(var);
+            if(value == null) throw new MapException("Not such variable defined\n");
+            else return value;
+        }
     }
-}
+
