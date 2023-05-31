@@ -1,3 +1,0 @@
-#Commentary
-PUSH 10
-PUSH 30

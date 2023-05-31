@@ -15,6 +15,7 @@ public class Factory {
     private static final int WORDS_SIZE = 3;
     private static final int CREATOR_CLASS_INDEX = 1;
     private static final int OPERATION_CLASS_INDEX = 2;
+    private static final int NO_SUCH_COMMAND = -1;
 
     public static ArrayList<Creator> makeCreators() throws CreatorException {
         try {
@@ -30,7 +31,7 @@ public class Factory {
                 str = reader.readString();
                 if (str == null) break;
                 operationIndex = parser.parseString(str, words);
-                if (operationIndex == -1) break;
+                if (operationIndex == NO_SUCH_COMMAND) break;
                 Class<?> creatorClass = Class.forName(words[CREATOR_CLASS_INDEX]);
                 Creator creator = (Creator) creatorClass.newInstance();
                 creator.initCreator(words[OPERATION_CLASS_INDEX]);

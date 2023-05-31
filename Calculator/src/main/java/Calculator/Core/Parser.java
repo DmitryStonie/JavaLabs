@@ -11,6 +11,7 @@ public class Parser {
 
     private static final int WORDS_SIZE = 3;
     private static final String CONFIG_FILE_NAME = "../Factory/config";
+    private static final int COMMAND_INDEX = 0;
     private static ArrayList<String> commands = null;
 
     public void init() throws InitParserException {
@@ -23,13 +24,13 @@ public class Parser {
         while (input.hasNext()) {
             str = input.nextLine();
             words = str.split(" ", WORDS_SIZE);
-            commands.add(words[0]);
+            commands.add(words[COMMAND_INDEX]);
         }
     }
 
     public int parseString(String str, String[] words) {
         String[] localWords = str.split(" ", WORDS_SIZE);
         System.arraycopy(localWords, 0, words, 0, localWords.length);
-        return commands.lastIndexOf(words[0]);
+        return commands.lastIndexOf(words[COMMAND_INDEX]);
     }
 }

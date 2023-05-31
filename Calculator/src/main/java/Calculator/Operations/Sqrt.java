@@ -3,7 +3,6 @@ package Calculator.Operations;
 import Calculator.Core.ExecutionContext;
 import Calculator.Exceptions.Execution.SqrtOperationException;
 import Calculator.Exceptions.Execution.StackException;
-import Calculator.Exceptions.Execution.SubOperationException;
 
 public class Sqrt implements Operation{
     @Override
@@ -19,6 +18,7 @@ public class Sqrt implements Operation{
         } catch (StackException e){
             throw new SqrtOperationException("Sqrt operation unsuccessful\n");
         } catch (SqrtOperationException e){
+            System.out.println(e.getMessage());
             throw e;
         }
     }
