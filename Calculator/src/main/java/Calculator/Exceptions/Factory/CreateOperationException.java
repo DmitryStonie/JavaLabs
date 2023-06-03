@@ -1,6 +1,6 @@
 package Calculator.Exceptions.Factory;
 
-public class CreateOperationException extends Exception{
+public class CreateOperationException extends CreatorException{
     public CreateOperationException(){
         super();
     }

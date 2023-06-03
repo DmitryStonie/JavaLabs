@@ -1,6 +1,7 @@
 package Calculator.Core;
 
 import Calculator.Exceptions.Execution.InitParserException;
+import Calculator.Exceptions.Execution.InvalidCommandException;
 import Calculator.Factory.Factory;
 
 import java.io.InputStream;
@@ -28,9 +29,11 @@ public class Parser {
         }
     }
 
-    public int parseString(String str, String[] words) {
+    public int parseString(String str, String[] words) throws InvalidCommandException {
         String[] localWords = str.split(" ", WORDS_SIZE);
         System.arraycopy(localWords, 0, words, 0, localWords.length);
-        return commands.lastIndexOf(words[COMMAND_INDEX]);
+        int commandIndex = commands.lastIndexOf(words[COMMAND_INDEX]);
+        if(commandIndex == -1) throw new InvalidCommandException("Exception. No such command.");
+        return commandIndex;
     }
 }

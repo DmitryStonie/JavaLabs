@@ -1,6 +1,6 @@
 package Calculator.Exceptions.Execution;
 
-public class StackException extends Exception{
+public class StackException extends ExecContextException{
     public StackException(){
         super();
     }
