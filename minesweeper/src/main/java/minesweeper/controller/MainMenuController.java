@@ -1,10 +1,15 @@
 package minesweeper.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import minesweeper.App;
+import minesweeper.model.settings.SettingsData;
+
+import java.io.IOException;
 
 public class MainMenuController {
 
@@ -16,7 +21,7 @@ public class MainMenuController {
     private static final String EXIT_HEADER = "Are you sure you want to exit?";
     private static final String EXIT_LABEL_CONTENT = "://///";
 
-
+    private SettingsData settingsData = new SettingsData();
     @FXML
     private AnchorPane pane = new AnchorPane();
 
@@ -25,6 +30,17 @@ public class MainMenuController {
 
     @FXML
     void createNewGame(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(NEW_GAME_VIEW));
+        try {
+            settingsData = SettingsController.downloadSettingFile();
+            root = loader.load();
+            GameController gameController = loader.getController();
+            gameController.setData(settingsData);
+
+            App.setNewScene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
