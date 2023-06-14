@@ -3,13 +3,17 @@ package minesweeper.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import minesweeper.App;
 import minesweeper.model.settings.SettingsData;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MainMenuController {
 
@@ -45,14 +49,40 @@ public class MainMenuController {
 
     @FXML
     void exitFromGame(MouseEvent event) {
+        Alert exitAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        exitAlert.setTitle("Exit");
+        ButtonType sureButton = new ButtonType("Sure");
+        ButtonType noButton = new ButtonType("No!!!");
+        exitAlert.getButtonTypes().clear();
+        exitAlert.getButtonTypes().addAll(sureButton, noButton);
+        exitAlert.setHeaderText(EXIT_HEADER);
+        exitAlert.setContentText(EXIT_LABEL_CONTENT);
+        if (exitAlert.showAndWait().get() == sureButton) {
+            Stage stage = (Stage) pane.getScene().getWindow();
+            stage.close();
+        }
     }
 
     @FXML
     void showScoreTable(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(SCORE_TABLE_VIEW));
+        try {
+            root = loader.load();
+            App.setNewScene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void showSettings(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(SETTINGS_VIEW));
+            root = loader.load();
+            App.setNewScene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void initialize() {

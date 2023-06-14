@@ -10,6 +10,8 @@ import minesweeper.view.GameView;
 public class GameController extends GameView {
     @FXML
     public void restartGame(MouseEvent event) {
+        //timer.restartTimer();
+        //minesweeperData.restartGame();
     }
     @FXML
     public void clickInGameField(MouseEvent event) {
