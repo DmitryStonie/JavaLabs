@@ -14,14 +14,14 @@ import java.util.Objects;
 public class App extends Application {
     private static final int WIDTH_OF_WINDOW = 600;
     private static final int LENGTH_OF_WINDOW = 600;
-    private static final String START_VIEW = "/primary";
+    private static final String START_VIEW = "/primary.fxml";
     private static final String ICON_IMAGE = "/images/minesweeperIcon.jpg";
 
 
     private static Stage stage;
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml));
         return fxmlLoader.load();
     }
 

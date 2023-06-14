@@ -21,7 +21,7 @@ public class SettingsController {
     private static final int THIRD_EL = 2;
     private static final int FOURTH_EL = 3;
     private static final String SETTINGS_DATA_FILE = "src/main/java/minesweeper/model/settings/settingsData";
-    private static final String MAIN_MENU_VIEW = "/resources/primary.fxml";
+    private static final String MAIN_MENU_VIEW = "/primary.fxml";
     private static final String EMPTY_STR = "";
     private static final String WRONG_NUMBER = "Write only positive integer numbers!";
     private static final String POSITIVE_INTEGER_NUMBER = "\\d+";
@@ -112,7 +112,16 @@ public class SettingsController {
     }
 
     public void initialize() {
+        settingImage.fitWidthProperty().bind(SettingPane.widthProperty());
+        settingImage.fitHeightProperty().bind(SettingPane.heightProperty());
+        try {
+            settingsData = downloadSettingFile();
+            setTextFields(settingsData);
+            setParsedData(settingsData);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

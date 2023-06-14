@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import minesweeper.App;
+import minesweeper.model.scoreTable.ScoreTableData;
 import minesweeper.model.settings.SettingsData;
 
 import java.io.IOException;
@@ -19,9 +20,9 @@ public class MainMenuController {
 
     private Parent root;
 
-    private static final String NEW_GAME_VIEW = "/resources/game.fxml";
-    private static final String SCORE_TABLE_VIEW = "/resources/scoreTable.fxml";
-    private static final String SETTINGS_VIEW = "/resources/settingsForNewGame.fxml";
+    private static final String NEW_GAME_VIEW = "/game.fxml";
+    private static final String SCORE_TABLE_VIEW = "/scoreTable.fxml";
+    private static final String SETTINGS_VIEW = "/settingsForNewGame.fxml";
     private static final String EXIT_HEADER = "Are you sure you want to exit?";
     private static final String EXIT_LABEL_CONTENT = "://///";
 
@@ -89,6 +90,14 @@ public class MainMenuController {
         startImage.fitWidthProperty().bind(pane.widthProperty());
         startImage.fitHeightProperty().bind(pane.heightProperty());
     }
-
+    public void setScoreTableData(List<ScoreTableData> scoreTableDataList) {
+        try {
+            if (!scoreTableDataList.isEmpty()) {
+                ScoreTableController.addDataInFile(scoreTableDataList);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
