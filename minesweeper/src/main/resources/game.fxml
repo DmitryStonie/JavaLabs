@@ -25,7 +25,7 @@
                 </GridPane>
             </center>
         </BorderPane>
-        <Label fx:id="timeLabel" alignment="CENTER" layoutX="413.0" layoutY="14.0" prefHeight="46.0" prefWidth="129.0" style="-fx-background-color: rgb(254, 225, 92); -fx-background-radius: 10; -fx-border-color: #96762B; -fx-border-radius: 10;" textAlignment="CENTER" textFill="#846953">
+        <Label fx:id="timeLabel" alignment="CENTER" layoutX="413.0" layoutY="14.0" prefHeight="46.0" prefWidth="129.0" style="-fx-background-color: rgb(36,83,87); -fx-background-radius: 10; -fx-border-color: #7ed9cc; -fx-border-radius: 10;" textAlignment="CENTER" textFill="#1f0029">
             <font>
                 <Font size="20.0" />
             </font>

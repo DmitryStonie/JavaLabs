@@ -19,9 +19,9 @@ public class MainMenuController {
 
     private Parent root;
 
-    private static final String NEW_GAME_VIEW = "minesweeper/game.fxml";
-    private static final String SCORE_TABLE_VIEW = "minesweeper/scoreTable.fxml";
-    private static final String SETTINGS_VIEW = "minesweeper/settingsForNewGame.fxml";
+    private static final String NEW_GAME_VIEW = "/resources/game.fxml";
+    private static final String SCORE_TABLE_VIEW = "/resources/scoreTable.fxml";
+    private static final String SETTINGS_VIEW = "/resources/settingsForNewGame.fxml";
     private static final String EXIT_HEADER = "Are you sure you want to exit?";
     private static final String EXIT_LABEL_CONTENT = "://///";
 

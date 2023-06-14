@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import minesweeper.App;
 import minesweeper.model.settings.SettingsData;
 
 import java.io.*;
@@ -20,7 +21,7 @@ public class SettingsController {
     private static final int THIRD_EL = 2;
     private static final int FOURTH_EL = 3;
     private static final String SETTINGS_DATA_FILE = "src/main/java/minesweeper/model/settings/settingsData";
-    private static final String MAIN_MENU_VIEW = "/minesweeper/primary.fxml";
+    private static final String MAIN_MENU_VIEW = "/resources/primary.fxml";
     private static final String EMPTY_STR = "";
     private static final String WRONG_NUMBER = "Write only positive integer numbers!";
     private static final String POSITIVE_INTEGER_NUMBER = "\\d+";
@@ -87,6 +88,11 @@ public class SettingsController {
         }
         return settingsData;
     }
+    public static void addSettingsInFile(SettingsData settingsData) throws IOException {
+        try (BufferedWriter settingsFileWriter = new BufferedWriter(new FileWriter(SETTINGS_DATA_FILE))) {
+            settingsFileWriter.write(createSettingsRecord(settingsData));
+        }
+    }
 
 
     public String getUserName() {
@@ -111,26 +117,80 @@ public class SettingsController {
 
     @FXML
     public void goBack(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(MAIN_MENU_VIEW));
+        try {
+            SettingsController.addSettingsInFile(settingsData);
 
+            Parent root = loader.load();
+            App.setNewScene(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void setLength(ActionEvent event) {
-
+        String length = lengthField.getText();
+        if (!length.matches(POSITIVE_INTEGER_NUMBER)) {
+            lengthField.setText(String.valueOf(settingsData.getLength()));
+            labelUnderLength.setText(WRONG_NUMBER);
+            return;
+        }
+        if (Integer.parseInt(length) * parsedWidth < parsedNumOfMines) {
+            lengthField.setText(String.valueOf(settingsData.getLength()));
+            labelUnderLength.setText(WRONG_SIZE_OF_FIELD);
+            return;
+        }
+        labelUnderLength.setText(EMPTY_STR);
+        parsedLength = Integer.parseInt(length);
+        settingsData.setLength(this.getLength());
     }
 
     @FXML
     public void setNumOfMines(ActionEvent event) {
-
+        String numOfMines = numOfMinesField.getText();
+        if (!numOfMines.matches(POSITIVE_INTEGER_NUMBER)) {
+            numOfMinesField.setText(String.valueOf(settingsData.getNumOfMines()));
+            labelUnderNumOfMines.setText(WRONG_NUMBER);
+            return;
+        }
+        if (parsedLength * parsedWidth < Integer.parseInt(numOfMines) ) {
+            numOfMinesField.setText(String.valueOf(settingsData.getNumOfMines()));
+            labelUnderNumOfMines.setText(WRONG_SIZE_OF_FIELD);
+            return;
+        }
+        labelUnderNumOfMines.setText(EMPTY_STR);
+        parsedNumOfMines = Integer.parseInt(numOfMines);
+        settingsData.setNumOfMines(this.getNumOfMines());
     }
 
     @FXML
     public void setUserName(ActionEvent event) {
-
+        if (nameField.getText().contains(FILE_DELIMITER)) {
+            nameField.setText(settingsData.getUserName());
+            labelUnderUserName.setText(WRONG_USER_NAME);
+            return;
+        }
+        labelUnderUserName.setText(EMPTY_STR);
+        settingsData.setUserName(this.getUserName());
     }
 
     @FXML
     public void setWidth(ActionEvent event) {
+        String width = widthField.getText();
+        if (!width.matches(POSITIVE_INTEGER_NUMBER)) {
+            widthField.setText(String.valueOf(settingsData.getWidth()));
+            labelUnderWidth.setText(WRONG_NUMBER);
+            return;
+        }
+        if (parsedLength * Integer.parseInt(width) < parsedNumOfMines) {
+            widthField.setText(String.valueOf(settingsData.getWidth()));
+            labelUnderWidth.setText(WRONG_SIZE_OF_FIELD);
+            return;
+        }
+        labelUnderWidth.setText(EMPTY_STR);
+        parsedWidth = Integer.parseInt(width);
+        settingsData.setWidth(this.getWidth());
     }
 
 }
