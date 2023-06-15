@@ -66,9 +66,16 @@ public class SettingsController {
     private Label labelUnderUserName;
 
     private void setTextFields(SettingsData settingsData) {
+        lengthField.setText(String.valueOf(settingsData.getLength()));
+        widthField.setText(String.valueOf(settingsData.getWidth()));
+        numOfMinesField.setText(String.valueOf(settingsData.getNumOfMines()));
+        nameField.setText(settingsData.getUserName());
     }
 
     private void setParsedData(SettingsData settingsData) {
+        parsedLength = settingsData.getLength();
+        parsedWidth = settingsData.getWidth();
+        parsedNumOfMines = settingsData.getNumOfMines();
     }
 
     private static String createSettingsRecord(SettingsData settingsData) {

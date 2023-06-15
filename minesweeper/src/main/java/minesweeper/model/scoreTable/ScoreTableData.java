@@ -8,7 +8,6 @@ public class ScoreTableData {
         this.userName = userName;
         this.time = time;
     }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }

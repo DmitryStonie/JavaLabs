@@ -1,8 +1,9 @@
 package minesweeper.timer;
 
+
 import minesweeper.observerPattern.Observable;
 
-public class Timer extends Observable implements Runnable {
+public class MyTimer extends Observable implements Runnable {
     private static final int START_TIMER_VAL = 0;
     private static final int MILLISECONDS_IN_SECOND = 1000;
     private static final int SECONDS_IN_MINUTE = 60;
@@ -13,7 +14,7 @@ public class Timer extends Observable implements Runnable {
     private int intervalSeconds;
     private boolean isActive = true;
 
-    public Timer() {
+    public MyTimer() {
         intervalSeconds = START_TIMER_VAL;
     }
 

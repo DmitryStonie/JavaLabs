@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScoreTableController {
-    private static final String MAIN_MENU_VIEW = "/resources/primary.fxml";
-    private static final String SCORE_FILE = "/minesweeper/model/scoreTable/scoreData";
+    private static final String MAIN_MENU_VIEW = "/primary.fxml";
+    private static final String SCORE_FILE = "src/main/java/minesweeper/model/scoreTable/scoreData";
     private static final String SCORE_FILE_DELIMITER = ";";
     private static final int FIRST_EL = 0;
     private static final int SECOND_EL = 1;
