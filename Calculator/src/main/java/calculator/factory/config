@@ -1,0 +1,9 @@
++ calculator.factory.AddCreator calculator.operations.Add
+DEFINE calculator.factory.DefineCreator calculator.operations.Define
+/ calculator.factory.DivideCreator calculator.operations.Divide
+* calculator.factory.MultipleCreator calculator.operations.Multiple
+POP calculator.factory.PopCreator calculator.operations.Pop
+PRINT calculator.factory.PrintCreator calculator.operations.Print
+PUSH calculator.factory.PushCreator calculator.operations.Push
+SQRT calculator.factory.SqrtCreator calculator.operations.Sqrt
+- calculator.factory.SubCreator calculator.operations.Sub
