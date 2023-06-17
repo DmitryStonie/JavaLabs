@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Parser {
 
     private static final int WORDS_SIZE = 3;
-    private static final String CONFIG_FILE_NAME = "../Factory/config";
+    private static final String CONFIG_FILE_NAME = "../factory/config";
     private static final int COMMAND_INDEX = 0;
     private static ArrayList<String> commands = null;
 
