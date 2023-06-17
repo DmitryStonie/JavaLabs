@@ -25,7 +25,7 @@ public class SettingsController {
     private static final String EMPTY_STR = "";
     private static final String WRONG_NUMBER = "Write only positive integer numbers!";
     private static final String POSITIVE_INTEGER_NUMBER = "\\d+";
-    private static final String WRONG_SIZE_OF_FIELD = "You chose num of mines > size of field !";
+    private static final String WRONG_SIZE_OF_FIELD = "You chose num of mines >= size of field !";
     private static final String WRONG_USER_NAME = "Don`t use ';' please...";
     private static final String FILE_DELIMITER = ";";
 
@@ -170,7 +170,7 @@ public class SettingsController {
             labelUnderNumOfMines.setText(WRONG_NUMBER);
             return;
         }
-        if (parsedLength * parsedWidth < Integer.parseInt(numOfMines) ) {
+        if (parsedLength * parsedWidth <= Integer.parseInt(numOfMines) ) {
             numOfMinesField.setText(String.valueOf(settingsData.getNumOfMines()));
             labelUnderNumOfMines.setText(WRONG_SIZE_OF_FIELD);
             return;

@@ -19,6 +19,8 @@ public class MinesweeperData extends Observable {
     private boolean isWin = false;
     private boolean isEndGame = false;
 
+    private boolean isGameStarted = false;
+
     private int convertNumberToIndex(int index) {
         return index - ONE_ELEMENT;
     }
@@ -161,6 +163,13 @@ public class MinesweeperData extends Observable {
             increaseCellsAround(mineIndexInList);
         }
     }
+    private void resetMines(int cellIndex){
+        do{
+            clearCells();
+            setMines();
+        }
+        while(cellsCondition.get(cellIndex).getCellFilling().equals(CellFilling.BOMB));
+    }
 
     private void initCells () {
         for (int cellIndex = 0; cellIndex < sizeOfField; ++cellIndex) {
@@ -188,9 +197,16 @@ public class MinesweeperData extends Observable {
     }
 
     public void openCell(int cellIndex) {
-        cellsCondition.get(cellIndex).openCell();
-        handleOpenCell(cellIndex);
-        notifyObserver();
+        CellData cell = cellsCondition.get(cellIndex);
+        if(!isGameStarted && cell.getCellUserNote().equals(CellUserNote.UNKNOWN) && cell.getCellFilling().equals(CellFilling.BOMB)){
+            resetMines(cellIndex);
+        }
+        isGameStarted = true;
+        if(cell.getCellUserNote().equals(CellUserNote.UNKNOWN)) {
+            cellsCondition.get(cellIndex).openCell();
+            handleOpenCell(cellIndex);
+            notifyObserver();
+        }
     }
 
     public void changeUserNote(int cellIndex) {
@@ -203,6 +219,7 @@ public class MinesweeperData extends Observable {
         setMines();
         isWin = false;
         isEndGame = false;
+        isGameStarted = false;
         notifyObserver();
     }
 

@@ -35,7 +35,6 @@ import static java.util.Map.entry;
 public class GameView implements Observer, TimeObserver {
 
     private static final String DEFAULT_CELL_IMAGE_PATH = "/images/cellImages/defaultCellImage.jpg";
-
     private static final String EMPTY_CELL_IMAGE = "/images/cellImages/emptyCellImage.jpg";
     private static final String FIRST_CELL_IMAGE = "/images/cellImages/firstCellImage.jpg";
     private static final String SECOND_CELL_IMAGE = "/images/cellImages/secondCellImage.jpg";
@@ -45,21 +44,14 @@ public class GameView implements Observer, TimeObserver {
     private static final String SIXTH_CELL_IMAGE = "/images/cellImages/sixthCellImage.jpg";
     private static final String SEVENTH_CELL_IMAGE = "/images/cellImages/seventhCellImage.jpg";
     private static final String EIGHTH_CELL_IMAGE = "/images/cellImages/eighthCellImage.jpg";
-
     private static final String SUSPICIOUS_CELL_IMAGE = "/images/cellImages/suspiciousCellImage.jpg";
-    private  static final String FLAG_CELL_IMAGE = "/images/cellImages/flagImage.jpg";
-
+    private static final String FLAG_CELL_IMAGE = "/images/cellImages/flagImage.jpg";
     private static final String MINE_CELL_IMAGE = "/images/cellImages/mineImage.jpg";
-
-
     private static final String MAIN_MENU_VIEW = "/primary.fxml";
-
     private static final String LOSING_HEADER = "You clicked on a mine";
     private static final String LOSING_CONTENT = "So you lost the game :c";
     private static final String WIN_HEADER = "You win !!!!";
-    private static final String WIN_CONTENT ="My congratulations !! :)";
-
-
+    private static final String WIN_CONTENT = "My congratulations !! :)";
     private static final double PREF_GAME_FILED_LENGTH = 450;
     private static final double PREF_GAME_FIELD_WIDTH = 450;
 
@@ -105,7 +97,7 @@ public class GameView implements Observer, TimeObserver {
     private void initField() {
         double imageSize = min(PREF_GAME_FIELD_WIDTH / widthField, PREF_GAME_FILED_LENGTH / lengthField);
         gameField.setMaxSize(widthField * imageSize, lengthField * imageSize);
-        for (int curLength  = 0; curLength < lengthField; ++curLength) {
+        for (int curLength = 0; curLength < lengthField; ++curLength) {
             for (int curWidth = 0; curWidth < widthField; ++curWidth) {
                 Image cellImage =
                         new Image(Objects.requireNonNull(getClass().getResourceAsStream(DEFAULT_CELL_IMAGE_PATH)));
@@ -202,10 +194,10 @@ public class GameView implements Observer, TimeObserver {
                 nameOfImage = CELL_FILLING_IMAGE.get(cellFilling);
             }
 
-            double imageSize = min(PREF_GAME_FIELD_WIDTH / widthField , PREF_GAME_FILED_LENGTH / lengthField);
+            double imageSize = min(PREF_GAME_FIELD_WIDTH / widthField, PREF_GAME_FILED_LENGTH / lengthField);
             InputStream streamForImage = Objects.requireNonNull(getClass().getResourceAsStream(nameOfImage));
             Image newCellImage = new Image(streamForImage,
-                    imageSize , imageSize, true, true );
+                    imageSize, imageSize, true, true);
 
             gameCells.get(cellIndex).setImage(newCellImage);
         }
