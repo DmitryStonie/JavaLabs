@@ -1,0 +1,118 @@
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory started.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory parser inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory reader inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator made.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator inited.
+июн. 16, 2023 9:25:57 PM calculator.factory.Factory makeCreators
+INFO: Factory new creator added.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Creators created.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Parser initialized.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Reader initialized from file.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: New command string read.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: String parsed into words.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Created operation instance.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Operation completed.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: New command string read.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: String parsed into words.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Created operation instance.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Operation completed.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: New command string read.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: String parsed into words.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Created operation instance.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Operation completed.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: New command string read.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: String parsed into words.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Created operation instance.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Operation completed.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: New command string read.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: String parsed into words.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Created operation instance.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Operation completed.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: New command string read.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: String parsed into words.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Created operation instance.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Operation completed.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: New command string read.
+июн. 16, 2023 9:25:57 PM calculator.core.Main main
+INFO: Program completed.
