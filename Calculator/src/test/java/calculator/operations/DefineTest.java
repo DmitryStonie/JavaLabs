@@ -1,9 +1,11 @@
 package calculator.operations;
 
-import calculator.core.ExecutionContext;
-import calculator.exceptions.execution.MapException;
-import calculator.exceptions.execution.OperationException;
+import ru.nsu.fit.yurin.calculator.core.ExecutionContext;
+import ru.nsu.fit.yurin.calculator.exceptions.execution.MapException;
+import ru.nsu.fit.yurin.calculator.exceptions.execution.OperationException;
 import org.junit.jupiter.api.Test;
+import ru.nsu.fit.yurin.calculator.operations.Define;
+import ru.nsu.fit.yurin.calculator.operations.Operation;
 
 import static org.junit.jupiter.api.Assertions.*;
 
