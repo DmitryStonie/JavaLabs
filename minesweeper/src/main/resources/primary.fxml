@@ -16,13 +16,13 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <Button fx:id="scoreTableButton" layoutX="194.0" layoutY="120.0" mnemonicParsing="false" onMouseClicked="#showScoreTable" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #7ed9cc; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #245357; -fx-border-radius: 300;" text="Score table" textFill="#1f0029"
+      <Button fx:id="scoreTableButton" layoutX="194.0" layoutY="120.0" mnemonicParsing="false" onMouseClicked="#showScoreTable" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #2aa558; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #245357; -fx-border-radius: 600;" text="Score table" textFill="#1f0029"
               AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="194.8" />
-      <Button fx:id="newGameButton" layoutX="194.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#createNewGame" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #7ed9cc; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #245357; -fx-border-radius: 300;" text="New game" textFill="#1f0029"
+      <Button fx:id="newGameButton" layoutX="194.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#createNewGame" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #2aa558; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #245357; -fx-border-radius: 600;" text="New game" textFill="#1f0029"
               AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="194.8" />
-      <Button fx:id="exitButton" layoutX="194.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#exitFromGame" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #245357; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #7ed9cc; -fx-border-radius: 300;" text="Exit" textFill="#1f0029"
+      <Button fx:id="exitButton" layoutX="194.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#exitFromGame" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #5b8d74; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #245357; -fx-border-radius: 600;" text="Exit" textFill="#1f0029"
               AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="194.8" />
-      <Button fx:id="settingsButton" layoutX="194.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#showSettings" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #7ed9cc; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #245357; -fx-border-radius: 300;" text="Settings" textFill="#1f0029"
+      <Button fx:id="settingsButton" layoutX="194.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#showSettings" prefHeight="23.0" prefWidth="211.0" style="-fx-background-color: #2aa558; -fx-font-size: 24; -fx-background-radius: 300; -fx-border-color: #245357; -fx-border-radius: 600;" text="Settings" textFill="#1f0029"
               AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="194.8" />
    </children>
 </AnchorPane>

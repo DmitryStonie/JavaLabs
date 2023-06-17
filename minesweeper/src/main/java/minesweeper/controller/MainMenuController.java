@@ -41,7 +41,6 @@ public class MainMenuController {
             root = loader.load();
             GameController gameController = loader.getController();
             gameController.setData(settingsData);
-
             App.setNewScene(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -86,10 +85,6 @@ public class MainMenuController {
         }
     }
 
-    public void initialize() {
-        startImage.fitWidthProperty().bind(pane.widthProperty());
-        startImage.fitHeightProperty().bind(pane.heightProperty());
-    }
     public void setScoreTableData(List<ScoreTableData> scoreTableDataList) {
         try {
             if (!scoreTableDataList.isEmpty()) {

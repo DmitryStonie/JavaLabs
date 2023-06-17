@@ -18,13 +18,13 @@
         </ImageView>
         <TableView fx:id="scoreTable" blendMode="MULTIPLY" layoutY="124.0" prefHeight="408.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <columns>
-                <TableColumn fx:id="userName" prefWidth="300.0" style="-fx-background-color: rgb(255,226,183); -fx-border-color: #7ed9cc;" text="user name" />
-                <TableColumn fx:id="time" prefWidth="296.8" style="-fx-background-color: rgb(255,226,183); -fx-border-color: #7ed9cc;" text="time" />
+                <TableColumn fx:id="userName" prefWidth="300.0" style="-fx-background-color: rgb(153,231,183); -fx-border-color: #245357;" text="username" />
+                <TableColumn fx:id="time" prefWidth="296.8" style="-fx-background-color: rgb(153,231,183); -fx-border-color: #245357;" text="time" />
             </columns>
         </TableView>
-        <Button fx:id="backButton" layoutX="459.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="38.0" prefWidth="126.0" style="-fx-background-radius: 1000; -fx-background-color: rgb(201,250,205); -fx-font-size: 15; -fx-border-color: #558994; -fx-border-radius: 10000;" text="Back" textAlignment="CENTER" textFill="#84767b"
+        <Button fx:id="backButton" layoutX="459.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="38.0" prefWidth="126.0" style="-fx-background-radius: 1000; -fx-background-color: rgb(42,165,88); -fx-font-size: 15; -fx-border-color: #558994; -fx-border-radius: 10000;" text="Back" textAlignment="CENTER" textFill="#1f0029"
                 AnchorPane.bottomAnchor="14.600000000000001" AnchorPane.rightAnchor="14.599999999999994" />
-        <Label alignment="CENTER" layoutX="52.0" layoutY="36.0" prefHeight="0.0" prefWidth="496.0" style="-fx-background-color: rgb(126,217,204); -fx-background-radius: 15; -fx-border-color: #558994; -fx-border-radius: 15;" text="Score table" textFill="#5c4b5e"
+        <Label alignment="CENTER" layoutX="52.0" layoutY="36.0" prefHeight="0.0" prefWidth="496.0" style="-fx-background-color: rgb(42,165,88); -fx-background-radius: 15; -fx-border-color: #558994; -fx-border-radius: 15;" text="Score table" textFill="#1f0029"
                AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="52.0">
             <font>
                 <Font size="48.0" />

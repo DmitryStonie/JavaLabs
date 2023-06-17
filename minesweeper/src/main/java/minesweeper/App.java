@@ -38,7 +38,9 @@ public class App extends Application {
             e.printStackTrace();
         }
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
+
     }
 
     public static void setNewScene(Parent root) {
